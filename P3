@@ -1,0 +1,32 @@
+int x=400;
+int y=300;
+int ballx=0;
+int bally=0;
+void setup(){
+  size(800,600);
+}
+
+void draw(){
+  background(0);
+  rect(x,y,40,40);
+  ellipse(ballx,bally,20,20);
+  ballx=ballx+4;
+  bally=bally+3;
+ 
+  if (x>800){
+    x=x-110;
+  if (y>600){
+    y=y-150;
+  }
+  }
+}
+
+void keyPressed(){
+  if (key == CODED) {
+    if (keyCode == RIGHT) {
+      x=x+50;
+    } else if (keyCode == LEFT) {
+      x=x-50;
+    }
+  }
+}
