@@ -1,0 +1,55 @@
+int x=400;
+int y=300;
+int ballx=0;
+int bally=0;
+int ball2x=800;
+int ball2y=0;
+int score=0;
+void setup(){
+  size(800,600);
+}
+
+void draw(){
+  background(0);
+  fill(255);
+  rect(x,y,40,40);
+  ellipse(ballx,bally,20,20);
+  ballx=ballx+4;
+  bally=bally+3;
+  ellipse(ball2x,ball2y,20,20); 
+  ball2x=ball2x-4;
+  ball2y=ball2y+3;
+ 
+   
+   if (ballx>800){
+     ballx=0;
+     bally=0;
+   }
+  
+  
+  if (ballx>x && ballx<x+40 && bally>y && bally<y+40){    
+    textSize(20);
+    fill(250,0,0);
+     String score = "Game Over";
+     text(score,350,100); 
+     ballx=x+20;
+     bally=y+20;
+  }
+  }
+
+void keyPressed(){
+  if (key == CODED) {
+    if (keyCode == RIGHT) {
+      x=x+30;
+    } else if (keyCode == LEFT) {
+      x=x-30;
+    }
+   }
+    if (key == CODED) {
+  if (keyCode == UP) {
+      y=y-30;
+    } else if (keyCode == DOWN) {
+      y=y+30;
+    }
+    }
+}
